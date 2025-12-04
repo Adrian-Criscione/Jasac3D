@@ -1,0 +1,290 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y FUENTES
+   ========================================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Fondo oscuro profundo (Dark Mode) */
+    background-color: #121212; 
+    /* Color de texto base claro */
+    color: #e0e0e0; 
+    /* Evita scroll horizontal indeseado */
+    overflow-x: hidden;
+}
+
+/* Títulos en secciones oscuras */
+h2.text-center.mb-5 {
+    color: white !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Accesibilidad */
+button:focus {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+/* =========================================
+   2. NAVBAR (GLASSMORPHISM)
+   ========================================= */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.85) !important; /* Semitransparente */
+    backdrop-filter: blur(10px);         /* Efecto borroso */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: white !important;
+}
+
+/* Logo de Texto */
+.brand-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white; /* Aseguramos que sea blanco por defecto */
+    text-decoration: none;
+}
+
+.brand-logo:hover {
+    color: #ffc107 !important; /* Dorado al pasar el mouse */
+    transition: color 0.3s ease;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero-section {
+    min-height: 80vh; 
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    padding-top: 80px; 
+}
+
+.brand-title {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Botón Hero Hover */
+.hero-section .btn-light {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-section .btn-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* =========================================
+   4. CARDS (DARK PREMIUM)
+   ========================================= */
+/* Corrección para que el fondo de la sección no sea blanco */
+section#productos.bg-light {
+    background-color: transparent !important;
+}
+
+.card {
+    /* Base */
+    background-color: #1e1e2e !important; 
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 20px !important;
+    overflow: hidden; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    transition: all 0.4s ease;
+    
+    /* FIX DE VISIBILIDAD: Asegura que se vea incluso si falla la animación */
+    opacity: 1; 
+}
+
+.card-body {
+    color: #ffffff;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text.fw-bold {
+    color: #ff9800 !important; /* Naranja filamento */
+    font-size: 1.2rem;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    background-color: #ffffff; 
+    border-radius: 20px 20px 0 0;
+}
+
+/* --- Efectos Hover --- */
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0, 212, 255, 0.2) !important;
+    border-color: rgba(0, 212, 255, 0.3) !important;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* =========================================
+   5. UTILIDADES Y FORMULARIOS
+   ========================================= */
+.text-gradient {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+}
+
+.btn {
+    border-radius: 50px;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+}
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+.form-control:focus::placeholder {
+    color: #adb5bd;
+}
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    padding: 40px 0;
+    border-top: 1px solid #333333;
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+footer .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+footer .social-icons a:hover {
+    color: #ffc107;
+}
+/* =========================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================= */
+
+/* --- TABLETS Y CELULARES GRANDES (Menos de 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste del Hero Section */
+    .hero-section {
+        min-height: auto; /* Quitamos la altura fija para que no quede espacio vacío extra */
+        padding-top: 120px; /* Más espacio arriba para que no choque con el menú */
+        padding-bottom: 60px;
+    }
+
+    /* 2. Achicar el Título Principal (Era muy grande) */
+    .hero-section h1.display-3 {
+        font-size: 2.5rem; /* Tamaño más amigable para tablets */
+    }
+
+    /* 3. Ajuste del Logo */
+    .brand-logo {
+        font-size: 1.3rem; /* Un poco más chico */
+    }
+
+    /* 4. Menú Desplegable Legible */
+    /* Como usamos glassmorphism, necesitamos un fondo sólido al abrir el menú en móvil */
+    .navbar-collapse {
+        background-color: #1e1e2e; /* Fondo oscuro coherente con las cards */
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+}
+
+/* --- CELULARES PEQUEÑOS (Menos de 480px) --- */
+@media (max-width: 480px) {
+    
+    /* 1. Botones Apilados (Uno arriba del otro) */
+    /* Buscamos el contenedor flex de los botones en el Hero */
+    .hero-section .d-flex {
+        flex-direction: column; /* Cambia la dirección a vertical */
+        width: 100%;
+    }
+
+    /* 2. Botones ancho completo */
+    .hero-section .btn {
+        width: 100%; /* Ocupan todo el ancho */
+        display: block; /* Asegura el bloque */
+        padding: 12px 0; /* Un poco más de altura para tocar fácil con el dedo */
+        font-size: 1rem; /* Tamaño legible */
+    }
+
+    /* 3. Ajuste final del título para pantallas muy chicas */
+    .hero-section h1.display-3 {
+        font-size: 2rem; 
+    }
+}
+/* =========================================
+   8. ANIMACIONES ADICIONALES
+   ========================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+/* Aplicar animación a las cards al cargarse */
+.card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* =========================================
+   9. AJUSTE DE COLOR DEL FOOTER
+   ========================================= */
+footer, footer p {
+    /* Cambiamos el gris oscuro por un blanco con transparencia (70%) */
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Opcional: Si quieres que el borde superior del footer sea más visible */
+footer.border-top {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}

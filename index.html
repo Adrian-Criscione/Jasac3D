@@ -1,273 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jasac Creaciones - Impresiones 3D personalizadas y productos únicos">
+    <meta name="description" content="Jasac Creaciones - Impresiones 3D a medida, filamentos y diseño.">
     <title>Jasac Creaciones - Impresiones 3D</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <span class="logo-icon">🖨️</span>
-                <span>Jasac Creaciones</span>
-            </a>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#productos" class="nav-link">Productos</a></li>
-                    <li><a href="#categorias" class="nav-link">Categorías</a></li>
-                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li>
-                        <a href="#" class="nav-link cart-icon">
-                            🛒
-                            <span class="cart-count">3</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <button class="mobile-toggle">☰</button>
-        </div>
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand brand-logo" href="#inicio">
+                    🧊 Jasac Creaciones
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#productos">Modelos 3D</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Presupuestos</a></li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-light ms-2 position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                🛒 Pedido
+                                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Impresiones 3D que Inspiran</h1>
-            <p>Descubre productos únicos y personalizados creados con la última tecnología de impresión 3D. Desde decoración hasta soluciones prácticas.</p>
-            <a href="#productos" class="btn">Ver Productos</a>
-        </div>
-    </section>
-
-    <!-- Productos Destacados -->
-    <section class="container" id="productos">
-        <h2 class="section-title">Productos Destacados</h2>
-        
-        <div class="products-grid">
-            <!-- Producto 1 -->
-            <article class="product-card">
-                <div class="product-image">🔦</div>
-                <div class="product-info">
-                    <h3 class="product-title">Lámpara Moderna 3D</h3>
-                    <p class="product-description">Diseño único con patrones geométricos que crean efectos de luz espectaculares.</p>
-                    <div class="product-price">$24.99</div>
-                    <div class="product-actions">
-                        <a href="#" class="btn">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-outline">Ver Detalles</a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Producto 2 -->
-            <article class="product-card">
-                <div class="product-image">🗿</div>
-                <div class="product-info">
-                    <h3 class="product-title">Escultura Decorativa</h3>
-                    <p class="product-description">Figura artística impresa en 3D, perfecta para decorar cualquier espacio.</p>
-                    <div class="product-price">$19.99</div>
-                    <div class="product-actions">
-                        <a href="#" class="btn">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-outline">Ver Detalles</a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Producto 3 -->
-            <article class="product-card">
-                <div class="product-image">📱</div>
-                <div class="product-info">
-                    <h3 class="product-title">Soporte para Teléfono</h3>
-                    <p class="product-description">Soporte ergonómico y estable para tu smartphone, disponible en varios colores.</p>
-                    <div class="product-price">$12.99</div>
-                    <div class="product-actions">
-                        <a href="#" class="btn">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-outline">Ver Detalles</a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Producto 4 -->
-            <article class="product-card">
-                <div class="product-image">🌿</div>
-                <div class="product-info">
-                    <h3 class="product-title">Maceta Autoriego</h3>
-                    <p class="product-description">Maceta inteligente con sistema de autorriego para mantener tus plantas saludables.</p>
-                    <div class="product-price">$18.99</div>
-                    <div class="product-actions">
-                        <a href="#" class="btn">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-outline">Ver Detalles</a>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Categorías -->
-    <section class="categories" id="categorias">
-        <div class="container">
-            <h2 class="section-title">Nuestras Categorías</h2>
-            
-            <div class="categories-grid">
-                <!-- Categoría 1 -->
-                <div class="category-card">
-                    <div class="category-icon">🏠</div>
-                    <h3>Decoración Hogar</h3>
-                    <p>Elementos decorativos únicos para cada espacio de tu hogar.</p>
-                </div>
-                
-                <!-- Categoría 2 -->
-                <div class="category-card">
-                    <div class="category-icon">🎁</div>
-                    <h3>Regalos Personalizados</h3>
-                    <p>Regalos únicos y personalizados para ocasiones especiales.</p>
-                </div>
-                
-                <!-- Categoría 3 -->
-                <div class="category-card">
-                    <div class="category-icon">🛠️</div>
-                    <h3>Herramientas y Utilitarios</h3>
-                    <p>Soluciones prácticas para el día a día y el trabajo.</p>
-                </div>
-                
-                <!-- Categoría 4 -->
-                <div class="category-card">
-                    <div class="category-icon">🎨</div>
-                    <h3>Arte y Esculturas</h3>
-                    <p>Piezas artísticas y escultóricas creadas con tecnología 3D.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Nosotros -->
-    <section class="about" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">Sobre Jasac Creaciones</h2>
-            
-            <div class="about-content">
-                <div class="about-image">
-                    🖨️
-                </div>
-                <div class="about-text">
-                    <h3>Innovación en Impresión 3D</h3>
-                    <p>En Jasac Creaciones combinamos creatividad y tecnología para ofrecer productos únicos impresos en 3D. Nuestro equipo de diseñadores trabaja constantemente para crear diseños innovadores y funcionales.</p>
-                    <p>Utilizamos materiales de alta calidad y las últimas tecnologías de impresión para garantizar que cada producto cumpla con los más altos estándares de durabilidad y estética.</p>
-                    <a href="#contacto" class="btn">Contáctanos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
-            
-            <div class="testimonials-grid">
-                <!-- Testimonio 1 -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Quedé impresionado con la calidad de los productos. La lámpara que compré es exactamente como en las fotos y ha sido un punto de conversación en mi sala."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MC</div>
-                        <div>
-                            <h4>María Cortés</h4>
-                            <p>Cliente desde 2023</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonio 2 -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"El soporte para teléfono es increíblemente estable y bien diseñado. Me encanta que sea personalizable. Definitivamente compraré más productos."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JL</div>
-                        <div>
-                            <h4>Javier López</h4>
-                            <p>Cliente desde 2024</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonio 3 -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Excelente servicio al cliente y productos de alta calidad. La maceta de autorriego ha mantenido mis plantas perfectamente durante mis vacaciones."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AG</div>
-                        <div>
-                            <h4>Ana García</h4>
-                            <p>Cliente desde 2023</p>
+    <main>
+        <section id="inicio" class="hero-section d-flex align-items-center text-center text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" data-aos="zoom-in" data-aos-duration="1000">
+                        <span class="badge bg-warning text-dark mb-3 text-uppercase fw-bold px-3 py-2 rounded-pill">
+                            🖨️ Calidad PLA & PETG
+                        </span>
+                        
+                        <h1 class="display-3 fw-bold mb-3 brand-title">
+                            Tus ideas, hechas <span class="text-gradient">realidad</span>
+                        </h1>
+                        
+                        <p class="lead mb-5 opacity-75">
+                            En <strong>Jasac Creaciones</strong> materializamos tus proyectos. 
+                            Mates, soportes, figuras de colección y repuestos técnicos con la mejor definición.
+                        </p>
+                        
+                        <div class="d-flex gap-3 justify-content-center">
+                            <a href="#productos" class="btn btn-light btn-lg px-5 rounded-pill fw-bold shadow-lg">
+                                Ver Catálogo
+                            </a>
+                            <a href="#contacto" class="btn btn-outline-light btn-lg px-5 rounded-pill fw-bold">
+                                Pedir Diseño
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer id="contacto">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Columna 1 -->
-                <div class="footer-column">
-                    <h3>Jasac Creaciones</h3>
-                    <p>Líder en impresiones 3D personalizadas y productos únicos. Innovación y calidad en cada creación.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">📷</a>
-                        <a href="#" class="social-link">🐦</a>
-                        <a href="#" class="social-link">📽️</a>
+        <section id="productos" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Catálogo de Impresiones</h2>
+                
+                <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="text-center w-100 py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                        <p class="mt-2 text-muted">Calibrando extrusor...</p>
                     </div>
                 </div>
-                
-                <!-- Columna 2 -->
-                <div class="footer-column">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
-                        <li><a href="#categorias">Categorías</a></li>
-                        <li><a href="#nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Columna 3 -->
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <ul class="footer-links">
-                        <li>📍 Dirección: Calle Innovación 123, Ciudad Tecnología</li>
-                        <li>📞 Teléfono: +1 234 567 890</li>
-                        <li>✉️ Email: info@jasaccreaciones.com</li>
-                        <li>🕒 Horario: Lunes a Viernes 9:00 - 18:00</li>
-                    </ul>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-5 container">
+            <div class="row justify-content-center">
+                <div class="col-md-8" data-aos="fade-up">
+                    <h2 class="text-center mb-4">Solicitá tu Presupuesto</h2>
+                    <div class="card p-4 shadow-lg border-0" style="background-color: #1e1e2e;">
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label text-white">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-white">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label text-white">Detalle del pedido (Color, Material, Tamaño)</label>
+                                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar Consulta</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Jasac Creaciones. Todos los derechos reservados.</p>
-            </div>
+        </section>
+    </main>
+
+    <footer class="text-muted py-5 border-top text-center border-secondary">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Jasac Creaciones - Impresión 3D Profesional</p>
         </div>
     </footer>
 
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Tu Pedido</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cart-items">
+                    <p class="text-center">No has agregado modelos aún.</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <strong class="me-auto">Total Estimado: $<span id="cart-total">0.00</span></strong>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir mirando</button>
+                    <button type="button" class="btn btn-success" id="checkout-btn">Confirmar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
-        // Script simple para el menú móvil
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
+        AOS.init(); 
     </script>
+
+    <script src="main.js"></script>
+
 </body>
 </html>
